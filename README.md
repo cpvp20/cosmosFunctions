@@ -1,4 +1,4 @@
-# cosmosFunctions
+# usersDatabse
 
 ## Micro Service Description
 This service is responsible for the connection and interaction with the Mongo Database, which stores the Users of our application.
