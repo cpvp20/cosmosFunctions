@@ -1,0 +1,14 @@
+{
+    "name": "carolina",
+    "last_name": "perezvargas",
+    "email": "clksdjkl@lkjds.cpm",
+    "registered_date": "12/12/2021",
+    "password": "231213saldjlas",
+    "phone": "2332414321",
+    "birth_date": "12/12/1999",
+    "allergies": ["bees"],
+    "vaccinated": false,
+    "previously_infected": false,
+    "currently_infected": false,
+    "blood_type": "o+"
+}
