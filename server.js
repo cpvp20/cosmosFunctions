@@ -17,6 +17,9 @@ const Reunions = require('./db/reunions');
 
 app.use('/api/users', usersRouter);
 app.use('/api/reunions', reunionsRouter);
+app.get('/', function (req, res) {
+    res.end('Hello there from mongofunctions service!');
+});
 
 app.listen(port, () => {
     console.log(`Backend Server Users running on port ${port}`);

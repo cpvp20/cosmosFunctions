@@ -37,7 +37,6 @@ router.route('/').post(async function (req, res) {
     let lastID = reunions.length > 0 ? Math.max.apply(null, rescates.map(item => item.id_reunion)) : 0; //si es el primero, el ulId sera 0
     console.log("last ID: ", lastID);
     newReunion.id_reunion = (lastID + 1);
-    newReunion.registered_date = new Date(); //today
     //save in DB
     let reunionDocument = Reunions(newReunion);
     reunionDocument.save()

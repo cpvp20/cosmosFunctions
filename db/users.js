@@ -14,7 +14,7 @@ let userSchema = mongoose.Schema({
         required: true
     },
     registered_date: {
-        type: Date,
+        type: String,
         required: true
     },
     password: {
@@ -25,7 +25,7 @@ let userSchema = mongoose.Schema({
         type: String
     },
     birth_date: {
-        type: Date,
+        type: String,
         required: true
     },
     profile_picture: {

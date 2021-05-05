@@ -1,8 +1,12 @@
 const mongoose = require('./mongodb-connect')
 
 let reunionSchema = mongoose.Schema({
+    id_reunion: {
+        type: Number,
+        required: true
+    },
     registered_date: {
-        type: Date,
+        type: String,
         required: true
     },
     users: {
