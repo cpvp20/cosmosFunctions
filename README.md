@@ -14,4 +14,5 @@ This service is responsible for the connection and interaction with the Mongo Da
 * Simple queries should exist to allow for searching and sorting on all tables.
 
 ## Deployment URL
-http://node-express-env.eba-cgywh39g.us-east-1.elasticbeanstalk.com/
+http://node-express-env.eba-yhhaeabq.us-east-1.elasticbeanstalk.com/
+
