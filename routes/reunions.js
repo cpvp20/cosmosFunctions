@@ -34,7 +34,7 @@ router.route('/:id_reunion').get((req, res) => {
 router.route('/').post(async function (req, res) {
     let newReunion = req.body;
     let reunions = await Reunions.find();
-    let lastID = reunions.length > 0 ? Math.max.apply(null, rescates.map(item => item.id_reunion)) : 0; //si es el primero, el ulId sera 0
+    let lastID = reunions.length > 0 ? Math.max.apply(null, reunions.map(item => item.id_reunion)) : 0; //si es el primero, el ulId sera 0
     console.log("last ID: ", lastID);
     newReunion.id_reunion = (lastID + 1);
     //save in DB
@@ -47,7 +47,7 @@ router.route('/').post(async function (req, res) {
         .catch(reason => {
             res.statusCode = 500;
             console.log(reason);
-            res.end();
+            res.end(reason);
         });
 
 });

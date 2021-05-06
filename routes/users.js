@@ -1,56 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const Users = require('../db/users');
-let jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
-
-
-//authMiddleware
-async function authMiddleware(req, res, next) {
-    token = req.headers['x-user-token']; // Validar el token 
-    jwt.verify(token, 'secret', function (err, decoded) {
-        if (err) {
-            res.status(401);
-            console.log("Token invalido");
-            res.end("Token invalido");
-        } else {
-            console.log("decoded");
-            console.log(decoded.email);
-            console.log(decoded.name);
-            req.name = decoded.name;
-            req.email = decoded.email;
-            next();
-        }
-    });
-}
-
-//login
-app.post('/login', async function (req, res) {
-    User.findOne({
-        email: req.body.email
-    }, (err, data) => {
-        if (err) {
-            res.statusCode = 400;
-            res.end("Credenciales incorrectas");
-        } else {
-            //comparar pswds
-            if (bcrypt.compareSync(req.body.password, data.password)) {
-                let token = jwt.sign({
-                    name: data.name,
-                    email: data.email
-                }, 'secret');
-                console.log("Usuario logueado con token");
-                console.log("token");
-                console.log(token);
-                res.statusCode = 200;
-                res.end(token);
-            } else {
-                res.statusCode = 400;
-                res.end("Credenciales incorrectas");
-            }
-        }
-    })
-});
 
 //get all Users
 router.route('/').get((req, res) => {
